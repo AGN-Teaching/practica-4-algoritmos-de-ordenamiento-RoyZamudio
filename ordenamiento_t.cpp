@@ -82,7 +82,7 @@ void experimentos(int tam, int reps, bool is, bool ss, bool bs) {
         duration<double> tiempo;
 
         // Arreglo aleatorio
-        cout << "Creando arreglo aleatorio de tamaño " << TAM_ARREGLO << "... ";
+        cout << "Creando arreglo aleatorio de tamanio " << TAM_ARREGLO << "... ";
         tiempo = crear_arreglo(A, TAM_ARREGLO, RANGO_MAX);
         cout << "\tCreado. ";
         cout << "\tTiempo: " << tiempo.count() << "s" << endl;
@@ -143,18 +143,24 @@ bool incluirAlgoritmo(string listaAlgs, char alg) {
 }
 
 
-int main(int argc, char * argv[]) {
-    if (argc != 4) {
-        cout << "Sintaxis: ordenamiento_t <tamaño_arreglo> <repeticiones> <lista_algoritmos>" << endl;
-        cout << "Algoritmos:" << endl;
-        cout << "i: insertion sort" << endl;
-        cout << "s: selection sort" << endl;
-        cout << "b: bubblesort" << endl;
-    } else {
-        bool is = incluirAlgoritmo(argv[3], 'i');
-        bool ss = incluirAlgoritmo(argv[3], 's');
-        bool bs = incluirAlgoritmo(argv[3], 'b');
-        experimentos(atoi(argv[1]), atoi(argv[2]), is, ss, bs);
-    }
+int main() {
+    int TAM_ARREGLO, REPETICIONES;
+    string listaAlgoritmos;
+
+    cout << "Ingrese el tamanio del arreglo: ";
+    cin >> TAM_ARREGLO;
+
+    cout << "Ingrese el numero de repeticiones: ";
+    cin >> REPETICIONES;
+
+    cout << "Ingrese la lista de algoritmos (i para Insertion Sort, s para Selection Sort, b para Bubblesort): ";
+    cin >> listaAlgoritmos;
+
+    bool is = incluirAlgoritmo(listaAlgoritmos, 'i');
+    bool ss = incluirAlgoritmo(listaAlgoritmos, 's');
+    bool bs = incluirAlgoritmo(listaAlgoritmos, 'b');
+
+    experimentos(TAM_ARREGLO, REPETICIONES, is, ss, bs);
+
     return EXIT_SUCCESS;
 }
