@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/ke8zCzPd)
+[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=13511791)
 # Práctica 4: Algoritmos de ordenamiento
 Rodrigo Zamudio Tovar 2213026292
 
@@ -32,6 +34,7 @@ Es simple pero menos eficiente en comparación con otros algoritmos para conjunt
 ![Alt text](Img/selectionsort.png)
 
 ### Bubblesort
+
 Compara y intercambia elementos adyacentes repetidamente hasta que la lista esté ordenada. En cada paso, los elementos más grandes "burbujean" hacia la posición correcta.
 
 Simple y fácil de implementar, pero no eficiente para conjuntos de datos grandes.
@@ -97,18 +100,27 @@ Para comparar los cinco algoritmos, se ejecutó el programa de control varias ve
 Por lo tanto, la evaluación del tiempo de ejecución de los algoritmos, después de que n = 500,000 podría llegar a durar más de uno o dos dias enteros si m = 30.
 
 ## Resultados
+Al hacer estos experimentos, se anotaron en una tabla los tiempos de ejecución que tomaron los cinco algoritmos (en SEGUNDOS). Con esos datos se obtuvo el tiempo promedio y la desviación estándar, además de que se gráficaron para poder analizar y comparar mejor los algoritmos.
+
+*NOTA: No se realizaron todas las repeticiones de los diferentes tamaños de los arreglos después de que n = 500,000 debido a la ineficiencia de los algoritmos iterativos.*
+
+![Alt text](Img/LecturaRes.png)
+
 - **Diferencias iniciales**
+
 En tamaños pequeños de arreglo, la diferencia en el tiempo de ejecución entre algoritmos era mínima. Algoritmos como Insertion Sort, Selection Sort y Bubblesort mostraron resultados similares en conjuntos de datos pequeños.
 
 ![Alt text](Img/resultados1.png)
 
 - **Aumento de tamaño del arreglo**
+
 A medida que el tamaño del arreglo aumentaba, se observó que los algoritmos iterativos (Insertion Sort, Selection Sort, Bubblesort) mostraban un aumento significativo en el tiempo de ejecución. Por el contrario, los algoritmos recursivos (Merge Sort, Quicksort) mantuvieron un rendimiento más constante y predecible a medida que aumentaba el tamaño del arreglo.
 
 ![Alt text](Img/resultados2.png)
 ![Alt text](Img/resultados3.png)
 
 - **Impacto de Bubblesort**
+
 Bubblesort fue el algoritmo que más se vio afectado por el tamaño del arreglo, mostrando tiempos de ejecución extremadamente largos a medida que n superaba los 100,000. Este comportamiento se atribuye a la naturaleza cuadrática de Bubblesort, que lo hace menos eficiente para conjuntos de datos grandes.
 
 ![Alt text](Img/resultados4.png)
